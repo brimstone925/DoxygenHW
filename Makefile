@@ -17,7 +17,8 @@ build:
 	@ make game
 
 clean:
-	@ -rm -f *.o core *.core a.out
+	@ -rm -f *.o core *.core a.out *.class
+	@ rm -r html latex
 
 archive:
 	@ - tar cvzf Sample_student_project.tar.gz .
