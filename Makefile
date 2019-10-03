@@ -18,11 +18,11 @@ build:
 
 clean:
 	@ -rm -f *.o core *.core a.out *.class *.html
-	@ rm -r html latex
+	@ - rm -r html latex
 
 archive:
 	@ - tar cvzf Sample_student_project.tar.gz .
 
-doc:
-	@  
+doc: 
+	@ - Doxygen Doxyfile 
 	
