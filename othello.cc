@@ -431,7 +431,13 @@ void Othello::whosTurn() {
 void Othello::make_skips() {
   skips++;
 }
-
+/**
+* this function determines who is currently winning the game
+* @param no parameters
+* @return either the last mover, the next mover, or neutral
+* @see last_mover()
+* @see next_mover()
+ */
 game::who Othello::winning()const {
 
   if (black > white) {
