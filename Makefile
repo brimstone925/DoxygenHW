@@ -1,22 +1,23 @@
+CC = g++
+CFLAGS= -g -Wall
+DEPS = colors.h game.h othello.h piece.h
+OBJ = game.o main.o othello.o
 
-all: mygame archive 
+game: $(OBJ)
+	@ ${CC} ${CFLAGS} *.o
 
-mygame: main.o game.o othello.o
-	g++ -o mygame main.o game.o othello.o
-main.o: main.cc
-	g++ -c -Wall main.cc
-game.o: game.h game.cc
-	g++ -c -Wall game.cc
-othello.o: othello.h piece.h othello.cc colors.h
-	g++ -c -Wall othello.cc
+%.o: %.cc $(DEPS)
+	@ ${CC} -c -o $@ $< ${CFLAGS}
 
-archive:
-	tar -cvzf archive.tar.gz main.cc game.h game.cc Othello.h piece.h othello.cc colors.h makefile
+all:
+	@ make build
+	@ make archive
+
+build:
+	@ make game
 
 clean:
-	rm -rf *.o build archive.tar.gz 
+	@ -rm -f *.o core *.core a.out
 
-
-	
-
-    
+archive:
+	@ - tar cvzf Sample_student_project.tar.gz .
