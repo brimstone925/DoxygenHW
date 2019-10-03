@@ -1,3 +1,5 @@
+
+
 // File: game.cxx
 
 #include <cassert>    // Provides assert
@@ -45,6 +47,11 @@ game::who game::play( )
 //*************************************************************************
 // OPTIONAL VIRTUAL FUNCTIONS (overriding these functions is optional)
 
+/**
+ *Prints the specified message to the termial
+ *@param const string& message (a string variable)
+ *@return void
+ */
 void game::display_message(const string& message) const
 {
 	cout << message;
@@ -60,6 +67,11 @@ string game::get_user_move( ) const
 	return answer;
 }
 
+/**
+ *Determines which player is winning the current game
+ *@param none
+ *@return HUMAN, COMPUTER, or NEUTRAL (game objects depending on what the function determines
+ */
 game::who game::winning()const {
 
 	int value = evaluate();
@@ -125,6 +137,15 @@ int game::eval_with_lookahead(int look_ahead, int beat_this)
 	return -best_value;
 }
 
+/**
+ *Makes a move for the computer
+ *@param none
+ *@return void
+ *@see eval_with_lookahead()
+ *@see compute_moves
+ *@see make_move()
+ */
+
 void game::make_computer_move( )
 {
 	queue<string> moves;
@@ -158,6 +179,15 @@ void game::make_computer_move( )
 	make_move(best_move);
 }
 
+/**
+ *Allows human player to make a move
+ *@param none
+ *@return void
+ *@see get_user_move()
+ *@see display_message()
+ *@see make_move()
+ */
+
 void game::make_human_move( ) {
 	string move;
 
@@ -171,6 +201,3 @@ void game::make_human_move( ) {
 }
 
 }
-
-
-
