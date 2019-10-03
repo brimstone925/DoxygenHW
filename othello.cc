@@ -414,7 +414,9 @@ bool Othello::is_game_over()const {
 ///A function that determines who's turn is next
 
 ///A function that determines whether it is the user's turn or the A.I.'s turn. Utilizes the next_mover() function
-/// from the game class. It does not take any inputs and is a void function so it doesn't produce any outputs. 
+/// from the game class. It does not take any inputs and is a void function so it doesn't produce any outputs.
+///
+///@see next_mover()
 
 void Othello::whosTurn() {
   if (next_mover() == COMPUTER) {
