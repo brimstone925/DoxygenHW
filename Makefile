@@ -24,5 +24,5 @@ archive:
 	@ - tar cvzf Sample_student_project.tar.gz .
 
 doc: 
-	@ - Doxygen Doxyfile 
+	@ - doxygen Doxyfile 
 	
